@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "rootDir": "SlidePuzzle/src",
+    "outDir": "SlidePuzzle/dist",
+    "strict": true
+  },
+  "include": ["SlidePuzzle/src/**/*.ts", "SlidePuzzle/src/script.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,182 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(0,0,0,0.8), rgba(0,0,0,1));
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.8);
+    letter-spacing: 3px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.8), 0 0 5px rgba(0, 255, 255, 0.8);
+    letter-spacing: 2px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulseText 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseText {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+}
+
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.8);
+    margin-top: 175px;
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 5px;
+    margin: 10px;
+    width: max-content;
+    background-color: #000;
+    border: 2px solid #444;
+    
+}
+
+.puzzle-grid div {
+    background-color: #333;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.puzzle-grid div.empty {
+    box-shadow: none !important;
+    background: transparent;
+    border: none;
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.puzzle-grid div.start-anim {
+    animation: popUp 1s ease-out forwards;
+}
+
+.puzzle-grid div.start-anim:nth-child(1) {
+    animation-delay: 0s;
+}
+.puzzle-grid div.start-anim:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.puzzle-grid div.start-anim:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.puzzle-grid div.start-anim:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.puzzle-grid div.start-anim:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.puzzle-grid div.start-anim:nth-child(6) {
+    animation-delay: 1s;
+}
+.puzzle-grid div.start-anim:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.puzzle-grid div.start-anim:nth-child(8) {
+    animation-delay: 1.4s;  
+}
+.puzzle-grid div.start-anim:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.puzzle-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    grid-template-rows: repeat(3, 75px);
+    gap: 5px;
+    margin-bottom: 10px;
+    background-color: #363636;
+}
+
+.preview-grid div {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.8), inset 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+.preview-label {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.7;
+}
